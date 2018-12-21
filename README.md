@@ -1,2 +1,2 @@
 # afr_wiced
-TBD by collaborators.
+TBD by collaborators of wiced_afr

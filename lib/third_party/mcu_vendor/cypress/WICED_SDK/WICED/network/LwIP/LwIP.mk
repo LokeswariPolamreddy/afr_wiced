@@ -31,7 +31,7 @@ endif
 
 GLOBAL_INCLUDES := $(AMAZON_FREERTOS_PATH)lib/third_party/lwip/src/include \
                    $(AMAZON_FREERTOS_PATH)lib/third_party/lwip/src/portable \
-                   $(AMAZON_FREERTOS_PATH)lib/third_party/lwip/src/portable/cypress/CYW943907AEVAL1F/include \
+                   $(AMAZON_FREERTOS_PATH)lib/third_party/lwip/src/portable/cypress/CYW954907AEVAL1F/include \
                    WICED
 
 $(NAME)_SOURCES :=  $(AMAZON_FREERTOS_PATH)lib/third_party/lwip/src/api/api_lib.c \

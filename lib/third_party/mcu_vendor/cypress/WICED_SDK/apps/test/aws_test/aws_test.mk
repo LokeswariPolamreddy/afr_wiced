@@ -3,11 +3,14 @@
 #
 
 NAME := aws_test
-GLOBAL_DEFINES := AMAZON_FREERTOS_ENABLE_UNIT_TESTS \
-                  WICED_AMAZON_FREERTOS_SDK \
+
+GLOBAL_DEFINES := WICED_AMAZON_FREERTOS_SDK
+
+ifeq ($(AMAZON_FREERTOS_ENABLE_UNIT_TESTS), 1)
+GLOBAL_DEFINES += AMAZON_FREERTOS_ENABLE_UNIT_TESTS \
                   UNITY_EXCLUDE_MATH_H \
                   UNITY_INCLUDE_CONFIG_H
-
+endif
 export AMAZON_FREERTOS_PATH := ../../../../../../../../
 export AMAZON_FREERTOS_LIB_PATH := ../../../../../../../
 
@@ -20,14 +23,15 @@ GLOBAL_INCLUDES +=  $(AMAZON_FREERTOS_PATH)tests/common/include/ \
                     $(AMAZON_FREERTOS_PATH)lib/include/private \
                     $(AMAZON_FREERTOS_PATH)lib/third_party/unity/src \
                     $(AMAZON_FREERTOS_PATH)lib/third_party/unity/extras/fixture/src \
-                    $(AMAZON_FREERTOS_PATH)tests/cypress/CYW943907AEVAL1F/common/config_files \
-                    $(AMAZON_FREERTOS_PATH)lib/third_party/lwip/src/portable/cypress/CYW943907AEVAL1F \
+                    $(AMAZON_FREERTOS_PATH)tests/cypress/CYW954907AEVAL1F/common/config_files \
+                    $(AMAZON_FREERTOS_PATH)lib/third_party/lwip/src/portable/cypress/CYW954907AEVAL1F \
                     $(AMAZON_FREERTOS_PATH)lib/third_party/lwip/src/portable/arch \
                     $(AMAZON_FREERTOS_PATH)tests/common/include/ \
-                    $(AMAZON_FREERTOS_PATH)tests/cypress/CYW943907AEVAL1F/common/config_files
+                    $(AMAZON_FREERTOS_PATH)tests/cypress/CYW954907AEVAL1F/common/config_files \
+                    $(AMAZON_FREERTOS_PATH)tests/cypress/CYW954907AEVAL1F/common/application_code/cypress_code/include
 
 #$(info $(AMAZON_FREERTOS_PATH))
-$(NAME)_SOURCES    := $(AMAZON_FREERTOS_PATH)tests/cypress/CYW943907AEVAL1F/common/application_code/main.c \
+$(NAME)_SOURCES    := $(AMAZON_FREERTOS_PATH)tests/cypress/CYW954907AEVAL1F/common/application_code/main.c \
                       $(AMAZON_FREERTOS_PATH)demos/common/logging/aws_logging_task_dynamic_buffers.c \
                       $(AMAZON_FREERTOS_PATH)tests/common/test_runner/aws_test_runner.c \
                       $(AMAZON_FREERTOS_PATH)tests/common/framework/aws_test_framework.c \
@@ -43,11 +47,12 @@ $(NAME)_SOURCES    := $(AMAZON_FREERTOS_PATH)tests/cypress/CYW943907AEVAL1F/comm
                       $(AMAZON_FREERTOS_PATH)tests/common/greengrass/aws_test_greengrass_discovery.c \
                       $(AMAZON_FREERTOS_PATH)tests/common/greengrass/aws_test_helper_secure_connect.c \
                       $(AMAZON_FREERTOS_PATH)tests/common/tls/aws_test_tls.c \
+                      $(AMAZON_FREERTOS_PATH)tests/common/crypto/aws_test_crypto.c \
                       $(AMAZON_FREERTOS_PATH)demos/common/devmode_key_provisioning/aws_dev_mode_key_provisioning.c
                     
 $(NAME)_COMPONENTS += utilities/wifi
 $(NAME)_COMPONENTS += aws
 
-APPLICATION_DCT := dct_read_write_dct.c
+APPLICATION_DCT := $(AMAZON_FREERTOS_PATH)tests/cypress/CYW954907AEVAL1F/common/application_code/cypress_code/dct_read_write_dct.c
 
 WICED_AMAZON_FREERTOS_SDK := 1

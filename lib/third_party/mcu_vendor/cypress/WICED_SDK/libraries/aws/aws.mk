@@ -87,10 +87,10 @@ $(NAME)_SOURCES :=  $(AMAZON_FREERTOS_LIB_PATH)lib/bufferpool/aws_bufferpool_sta
                     $(AMAZON_FREERTOS_LIB_PATH)lib/shadow/aws_shadow_json.c                              \
                     $(AMAZON_FREERTOS_LIB_PATH)lib/tls/aws_tls.c                                         \
                     $(AMAZON_FREERTOS_LIB_PATH)lib/utils/aws_system_init.c                               \
-                    $(AMAZON_FREERTOS_LIB_PATH)lib/wifi/portable/cypress/CYW943907AEVAL1F/aws_wifi.c     \
+                    $(AMAZON_FREERTOS_LIB_PATH)lib/wifi/portable/cypress/CYW954907AEVAL1F/aws_wifi.c     \
                     $(AMAZON_FREERTOS_LIB_PATH)lib/pkcs11/mbedtls/aws_pkcs11_mbedtls.c \
                     $(AMAZON_FREERTOS_LIB_PATH)lib/crypto/aws_crypto.c \
-                    $(AMAZON_FREERTOS_LIB_PATH)lib/pkcs11/portable/cypress/CYW943907AEVAL1F/aws_pkcs11_pal.c
+                    $(AMAZON_FREERTOS_LIB_PATH)lib/pkcs11/portable/cypress/CYW954907AEVAL1F/aws_pkcs11_pal.c
 
 $(NAME)_INCLUDES := $(AMAZON_FREERTOS_LIB_PATH)lib/include/ \
                     $(AMAZON_FREERTOS_LIB_PATH)lib/third_party/jsmn \

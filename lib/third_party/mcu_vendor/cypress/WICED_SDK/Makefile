@@ -4,9 +4,11 @@
 
 default: Help
 
-export SOURCE_ROOT:=$(dir $(word $(words $(MAKEFILE_LIST)), $(MAKEFILE_LIST)))
-export MAKEFILES_PATH := $(SOURCE_ROOT)makefiles
+export WICED_AMAZON_FREERTOS_SDK := 1
 
+export SOURCE_ROOT:=$(AMAZON_FREERTOS_PATH)/lib/third_party/mcu_vendor/cypress/WICED_SDK/
+export MAKEFILES_PATH := $(SOURCE_ROOT)/makefiles
+export TOOLS_ROOT:=$(WICED_STUDIO_SDK_PATH)/43xxx_Wi-Fi/tools
 MAKEFILE_TARGETS := clean test testlist iar_project release
 
 # Detect -iar style toolchain selection string
@@ -262,7 +264,7 @@ iar_project:
 clean:
 	$(QUIET)$(ECHO) Cleaning...
 	$(QUIET)$(CLEAN_COMMAND)
-	$(QUIET)$(RM) -rf .gdbinit
+	$(QUIET)$(RM) -rf .gdbinit ../../demos ../../lib ../../tests
 	$(QUIET)$(ECHO) Done
 
 ifneq (,$(filter test,$(MAKECMDGOALS)))
@@ -297,7 +299,7 @@ else
 include $(MAKEFILES_PATH)/wiced_toolchain_ARM_GNU.mk
 endif
 
-build/$(CLEANED_BUILD_STRING)/config.mk: $(SOURCE_ROOT)Makefile $(MAKEFILES_PATH)/wiced_config.mk $(MAKEFILES_PATH)/wiced_toolchain_common.mk $(MAKEFILES_PATH)/wiced_toolchain_ARM_GNU.mk $(WICED_SDK_MAKEFILES)
+build/$(CLEANED_BUILD_STRING)/config.mk: Makefile $(MAKEFILES_PATH)/wiced_config.mk $(MAKEFILES_PATH)/wiced_toolchain_common.mk $(MAKEFILES_PATH)/wiced_toolchain_ARM_GNU.mk $(WICED_SDK_MAKEFILES)
 	$(QUIET)$(ECHO) $(if $(WICED_SDK_MAKEFILES),Applying changes made to: $?,Making config file for first time)
 	$(QUIET)$(MAKE) -r $(SILENT) -f $(MAKEFILES_PATH)/wiced_config.mk $(CLEANED_BUILD_STRING)
 endif

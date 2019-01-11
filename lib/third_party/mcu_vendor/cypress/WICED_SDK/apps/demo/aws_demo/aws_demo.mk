@@ -15,14 +15,15 @@ GLOBAL_INCLUDES +=  $(AMAZON_FREERTOS_PATH)demos/common/include \
                     $(AMAZON_FREERTOS_PATH)lib/third_party/mbedtls/include \
                     $(AMAZON_FREERTOS_PATH)lib/include/ \
                     $(AMAZON_FREERTOS_PATH)lib/include/private \
-                    $(AMAZON_FREERTOS_PATH)demos/cypress/CYW943907AEVAL1F/common/config_files \
-                    $(AMAZON_FREERTOS_PATH)lib/third_party/lwip/src/portable/cypress/CYW943907AEVAL1F \
+                    $(AMAZON_FREERTOS_PATH)demos/cypress/CYW954907AEVAL1F/common/config_files \
+                    $(AMAZON_FREERTOS_PATH)lib/third_party/lwip/src/portable/cypress/CYW954907AEVAL1F \
                     $(AMAZON_FREERTOS_PATH)lib/third_party/lwip/src/portable/arch \
                     $(AMAZON_FREERTOS_PATH)demos/common/include/ \
-                    $(AMAZON_FREERTOS_PATH)demos/cypress/CYW943907AEVAL1F/common/config_files \
+                    $(AMAZON_FREERTOS_PATH)demos/cypress/CYW954907AEVAL1F/common/config_files \
+                    $(AMAZON_FREERTOS_PATH)demos/cypress/CYW954907AEVAL1F/common/application_code/cypress_code/include
 
 #$(info $(AMAZON_FREERTOS_PATH))
-$(NAME)_SOURCES    := $(AMAZON_FREERTOS_PATH)demos/cypress/CYW943907AEVAL1F/common/application_code/main.c \
+$(NAME)_SOURCES    := $(AMAZON_FREERTOS_PATH)demos/cypress/CYW954907AEVAL1F/common/application_code/main.c \
                       $(AMAZON_FREERTOS_PATH)demos/common/logging/aws_logging_task_dynamic_buffers.c \
                       $(AMAZON_FREERTOS_PATH)demos/common/demo_runner/aws_demo_runner.c \
                       $(AMAZON_FREERTOS_PATH)demos/common/mqtt/aws_hello_world.c \
@@ -33,6 +34,6 @@ $(NAME)_SOURCES    := $(AMAZON_FREERTOS_PATH)demos/cypress/CYW943907AEVAL1F/comm
 $(NAME)_COMPONENTS += utilities/wifi
 $(NAME)_COMPONENTS += aws
 
-APPLICATION_DCT := dct_read_write_dct.c
+APPLICATION_DCT := $(AMAZON_FREERTOS_PATH)demos/cypress/CYW954907AEVAL1F/common/application_code/cypress_code/dct_read_write_dct.c
 
 WICED_AMAZON_FREERTOS_SDK := 1

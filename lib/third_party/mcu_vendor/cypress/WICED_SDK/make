@@ -3,19 +3,19 @@
 # $ Copyright Cypress Semiconductor $
 #
 scriptname=${0##*/}
-scriptdir=${0%*$scriptname}
-
+#scriptdir=${0%*$scriptname}
+scriptdir=${WICED_STUDIO_SDK_PATH}43xxx_Wi-Fi/
 # Rerun the script with environment cleared out
-if [ "$1" != "ENVCLEARED" ]; then
-    exec -c "$scriptdir$scriptname" ENVCLEARED "$PATH" "$HOME" "$@"
-    exit
-else
-    shift
-    export SAVED_PATH=$1
-    shift
-    export SAVED_HOME=$1
-    shift
-fi
+#if [ "$1" != "ENVCLEARED" ]; then
+#    exec -c "$scriptdir$scriptname" ENVCLEARED "$PATH" "$HOME" "$@"
+#    exit
+#else
+#    shift
+#    export SAVED_PATH=$1
+#    shift
+#    export SAVED_HOME=$1
+#    shift
+#fi
 # Delete some automatic bash environment variables
 unset PATH
 unset TERM

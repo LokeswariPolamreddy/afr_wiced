@@ -1176,10 +1176,10 @@ static void handshake_timeout_handler( void* arg )
 static void* wiced_link_events_handler( const wwd_event_header_t* event_header, const uint8_t* event_data, void* handler_user_data )
 {
     UNUSED_PARAMETER( event_data );
-
+#ifndef WICED_AMAZON_FREERTOS_SDK
     WPRINT_MACRO( ("Link event (type, status, reason, flags) %u %u %u %u\n", (unsigned int)event_header->event_type, (unsigned int)event_header->status,
             (unsigned int)event_header->reason, (unsigned int)event_header->flags )) ;
-
+#endif
     if ( (event_header->interface != (uint8_t) WICED_STA_INTERFACE )
 #ifdef WICED_USE_WIFI_TWO_STA_INTERFACE
         && (event_header->interface != (uint8_t) WICED_AP_INTERFACE)

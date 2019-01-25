@@ -40,4 +40,16 @@
  */
 #define testwifiTASK_PRIORITY               ( tskIDLE_PRIORITY )
 
+/**
+ * @brief The timeout for all tasks to finish in the Wi-Fi multi-task tests.
+ */
+#define testwifiMULTITASK_TEST_TIMEOUT      pdMS_TO_TICKS( 600000 )
+
+/**
+ * @brief The timeout to wait for tasks to synchronize with the other in the Wi-Fi mult-task tests.
+ */
+#define testwifiTASK_SYNC_TIMEOUT           pdMS_TO_TICKS( 120000 )
+
+#define testwifiCONNECTION_DELAY            pdMS_TO_TICKS( 4000 )
+
 #endif /* _AWS_TEST_WIFI_CONFIG_H_ */

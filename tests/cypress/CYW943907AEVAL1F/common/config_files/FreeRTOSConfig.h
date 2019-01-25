@@ -296,7 +296,7 @@ extern void vLoggingPrint( const char * pcMessage );
 //#define configRAND32()    ulRand()
 
 /* FIX ME: The platform FreeRTOS is running on. */
-#define configPLATFORM_NAME    "Unknown"
+#define configPLATFORM_NAME    "CYW943907AEVAL1F"
 
 
 /* platform-specific tick functions */

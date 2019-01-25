@@ -205,7 +205,7 @@ extern void memp_free_notify( unsigned int type );
 
 #endif /* ifdef NETWORK_NOTIFY_RELEASED_PACKETS */
 
-
+#define configPLATFORM_NAME    "CYW954907AEVAL1F"
 #ifdef __cplusplus
 } /*extern "C" */
 #endif

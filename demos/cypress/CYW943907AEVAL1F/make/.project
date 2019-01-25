@@ -160,7 +160,7 @@
 		<link>
 			<name>lib/aws/secure_sockets</name>
 			<type>2</type>
-			<locationURI>BASE_DIR_ROOT/lib/secure_sockets/portable/cypress/CYW943907AEVAL1F</locationURI>
+			<locationURI>BASE_DIR_ROOT/lib/secure_sockets/portable/lwip</locationURI>
 		</link>
 		<link>
 			<name>lib/aws/shadow</name>
@@ -181,6 +181,11 @@
 			<name>lib/third_party/jsmn</name>
 			<type>2</type>
 			<locationURI>BASE_DIR_ROOT/lib/third_party/jsmn</locationURI>
+		</link>
+		<link>
+			<name>lib/third_party/lwip</name>
+			<type>2</type>
+			<locationURI>BASE_DIR_ROOT/lib/third_party/lwip</locationURI>
 		</link>
 		<link>
 			<name>lib/third_party/mbedtls</name>

@@ -68,5 +68,5 @@
 #define         integrationtestportableSEND_TIMEOUT                10000
 
 
-
+#define         tcptestECHO_TEST_SYNC_TIMEOUT                      180000 /* MS */
 #endif /*AWS_INTEGRATION_TEST_TCP_CONFIG_H */

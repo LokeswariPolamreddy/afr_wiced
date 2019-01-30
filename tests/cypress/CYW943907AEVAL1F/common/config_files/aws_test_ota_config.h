@@ -1,6 +1,6 @@
 /*
- * Amazon FreeRTOS V1.1.3
- * Copyright (C) 2018 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
+ * Amazon FreeRTOS V1.1.4
+ * Copyright (C) 2019 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
  * this software and associated documentation files (the "Software"), to deal in
@@ -43,7 +43,7 @@
 #define otatestpalFIRMWARE_FILE  "dummy.bin"
 
 /**
- * @brief Some boards OTA PAL layers will use the file names passed into it for the 
+ * @brief Some boards OTA PAL layers will use the file names passed into it for the
  * image and the certificates because their non-volatile memory is abstracted by a
  * file system. Set this to 1 if that is the case for your device.
  */

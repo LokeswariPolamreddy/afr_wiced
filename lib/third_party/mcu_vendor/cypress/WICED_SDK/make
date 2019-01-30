@@ -32,7 +32,7 @@
  # so agrees to indemnify Cypress against all liability.
 #
 scriptname=${0##*/}
-scriptdir=${WICED_STUDIO_SDK_PATH}43xxx_Wi-Fi/
+scriptdir=${WICED_STUDIO_SDK_PATH}/43xxx_Wi-Fi/
 
 # Delete some automatic bash environment variables
 unset PATH

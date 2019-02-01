@@ -36,17 +36,18 @@ GLOBAL_DEFINES := WICED_AMAZON_FREERTOS_SDK
 
 export AMAZON_FREERTOS_PATH := ../../../../../../../../
 export AMAZON_FREERTOS_LIB_PATH := ../../../../../../../
+export AFR_THIRDPARTY_PATH := ../../../../../../
 
 GLOBAL_INCLUDES +=  $(AMAZON_FREERTOS_PATH)demos/common/include \
-                    $(AMAZON_FREERTOS_PATH)lib/third_party/jsmn \
-                    $(AMAZON_FREERTOS_PATH)lib/third_party/pkcs11 \
-                    $(AMAZON_FREERTOS_PATH)lib/third_party/lwip/src/include/lwip \
-                    $(AMAZON_FREERTOS_PATH)lib/third_party/mbedtls/include \
+                    $(AFR_THIRDPARTY_PATH)jsmn \
+                    $(AFR_THIRDPARTY_PATH)pkcs11 \
+                    $(AFR_THIRDPARTY_PATH)lwip/src/include/lwip \
+                    $(AFR_THIRDPARTY_PATH)mbedtls/include \
                     $(AMAZON_FREERTOS_PATH)lib/include/ \
                     $(AMAZON_FREERTOS_PATH)lib/include/private \
                     $(AMAZON_FREERTOS_PATH)demos/cypress/$(PLATFORM)/common/config_files \
-                    $(AMAZON_FREERTOS_PATH)lib/third_party/lwip/src/portable/cypress/$(PLATFORM) \
-                    $(AMAZON_FREERTOS_PATH)lib/third_party/lwip/src/portable/arch \
+                    $(AFR_THIRDPARTY_PATH)lwip/src/portable/cypress/$(PLATFORM) \
+                    $(AFR_THIRDPARTY_PATH)lwip/src/portable/arch \
                     $(AMAZON_FREERTOS_PATH)demos/common/include/ \
                     $(AMAZON_FREERTOS_PATH)demos/cypress/$(PLATFORM)/common/config_files \
                     $(AMAZON_FREERTOS_PATH)demos/cypress/$(PLATFORM)/common/application_code/cypress_code/include

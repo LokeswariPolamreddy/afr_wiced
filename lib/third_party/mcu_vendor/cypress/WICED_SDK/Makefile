@@ -45,7 +45,7 @@ endif
 
 export AMAZON_FREERTOS_ENABLE_UNIT_TESTS := 1
 
-export SOURCE_ROOT:=$(AMAZON_FREERTOS_PATH)/lib/third_party/mcu_vendor/cypress/WICED_SDK/
+export SOURCE_ROOT:=./
 export MAKEFILES_PATH := $(SOURCE_ROOT)/makefiles
 export TOOLS_ROOT:=$(WICED_STUDIO_SDK_PATH)/43xxx_Wi-Fi/tools
 MAKEFILE_TARGETS := clean test testlist iar_project release
@@ -303,7 +303,7 @@ iar_project:
 clean:
 	$(QUIET)$(ECHO) Cleaning...
 	$(QUIET)$(CLEAN_COMMAND)
-	$(QUIET)$(RM) -rf .gdbinit ../../demos ../../lib ../../tests
+	$(QUIET)$(RM) -rf .gdbinit ../../demos ../../lib ../../tests ./lwip ./jsmn ./mbedtls ./unity
 	$(QUIET)$(ECHO) Done
 
 ifneq (,$(filter test,$(MAKECMDGOALS)))

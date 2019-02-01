@@ -42,19 +42,20 @@ GLOBAL_DEFINES += AMAZON_FREERTOS_ENABLE_UNIT_TESTS \
 endif
 export AMAZON_FREERTOS_PATH := ../../../../../../../../
 export AMAZON_FREERTOS_LIB_PATH := ../../../../../../../
+export AFR_THIRDPARTY_PATH := ../../../../../../
 
 GLOBAL_INCLUDES +=  $(AMAZON_FREERTOS_PATH)tests/common/include/ \
-                    $(AMAZON_FREERTOS_PATH)lib/third_party/jsmn \
-                    $(AMAZON_FREERTOS_PATH)lib/third_party/pkcs11 \
-                    $(AMAZON_FREERTOS_PATH)lib/third_party/lwip/src/include/lwip \
-                    $(AMAZON_FREERTOS_PATH)lib/third_party/mbedtls/include \
+                    $(AFR_THIRDPARTY_PATH)jsmn \
+                    $(AFR_THIRDPARTY_PATH)pkcs11 \
+                    $(AFR_THIRDPARTY_PATH)lwip/src/include/lwip \
+                    $(AFR_THIRDPARTY_PATH)mbedtls/include \
                     $(AMAZON_FREERTOS_PATH)lib/include/ \
                     $(AMAZON_FREERTOS_PATH)lib/include/private \
-                    $(AMAZON_FREERTOS_PATH)lib/third_party/unity/src \
-                    $(AMAZON_FREERTOS_PATH)lib/third_party/unity/extras/fixture/src \
+                    $(AFR_THIRDPARTY_PATH)unity/src \
+                    $(AFR_THIRDPARTY_PATH)unity/extras/fixture/src \
                     $(AMAZON_FREERTOS_PATH)tests/cypress/$(PLATFORM)/common/config_files \
-                    $(AMAZON_FREERTOS_PATH)lib/third_party/lwip/src/portable/cypress/$(PLATFORM) \
-                    $(AMAZON_FREERTOS_PATH)lib/third_party/lwip/src/portable/arch \
+                    $(AFR_THIRDPARTY_PATH)lwip/src/portable/cypress/$(PLATFORM) \
+                    $(AFR_THIRDPARTY_PATH)lwip/src/portable/arch \
                     $(AMAZON_FREERTOS_PATH)tests/common/include/ \
                     $(AMAZON_FREERTOS_PATH)tests/cypress/$(PLATFORM)/common/config_files \
                     $(AMAZON_FREERTOS_PATH)tests/cypress/$(PLATFORM)/common/application_code/cypress_code/include
@@ -64,8 +65,8 @@ $(NAME)_SOURCES    := $(AMAZON_FREERTOS_PATH)tests/cypress/$(PLATFORM)/common/ap
                       $(AMAZON_FREERTOS_PATH)demos/common/logging/aws_logging_task_dynamic_buffers.c \
                       $(AMAZON_FREERTOS_PATH)tests/common/test_runner/aws_test_runner.c \
                       $(AMAZON_FREERTOS_PATH)tests/common/framework/aws_test_framework.c \
-                      $(AMAZON_FREERTOS_PATH)lib/third_party/unity/src/unity.c \
-                      $(AMAZON_FREERTOS_PATH)lib/third_party/unity/extras/fixture/src/unity_fixture.c \
+                      $(AFR_THIRDPARTY_PATH)unity/src/unity.c \
+                      $(AFR_THIRDPARTY_PATH)unity/extras/fixture/src/unity_fixture.c \
                       $(AMAZON_FREERTOS_PATH)tests/common/wifi/aws_test_wifi.c \
                       $(AMAZON_FREERTOS_PATH)tests/common/tls/aws_test_tls.c \
                       $(AMAZON_FREERTOS_PATH)tests/common/secure_sockets/aws_test_tcp.c \

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>aws_test</name>
+	<name>aws_tests</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -132,6 +132,11 @@
 			<type>2</type>
 			<locationURI>BASE_DIR_ROOT/tests/common/include</locationURI>
 		</link>
+        <link>
+			<name>application_code/common_tests/logging</name>
+			<type>2</type>
+			<locationURI>BASE_DIR_ROOT/demos/common/logging</locationURI>
+		</link>
 		<link>
 			<name>application_code/common_tests/memory_leak</name>
 			<type>2</type>
@@ -146,6 +151,11 @@
 			<name>application_code/common_tests/ota</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
+		</link>
+        <link>
+			<name>application_code/common_tests/pkcs11</name>
+			<type>2</type>
+			<locationURI>BASE_DIR_ROOT/tests/common/pkcs11</locationURI>
 		</link>
 		<link>
 			<name>application_code/common_tests/secure_sockets</name>
@@ -188,6 +198,11 @@
 			<locationURI>BASE_DIR_ROOT/lib/bufferpool</locationURI>
 		</link>
 		<link>
+			<name>lib/aws/crypto</name>
+			<type>2</type>
+			<locationURI>BASE_DIR_ROOT/lib/crypto</locationURI>
+		</link>
+		<link>
 			<name>lib/aws/greengrass</name>
 			<type>2</type>
 			<locationURI>BASE_DIR_ROOT/lib/greengrass</locationURI>
@@ -208,6 +223,11 @@
 			<locationURI>BASE_DIR_ROOT/lib/pkcs11/portable/cypress/CYW954907AEVAL1F</locationURI>
 		</link>
 		<link>
+			<name>lib/aws/pkcs11/aws_pkcs11_mbedtls.c</name>
+			<type>1</type>
+			<locationURI>BASE_DIR_ROOT/lib/pkcs11/mbedtls/aws_pkcs11_mbedtls.c</locationURI>
+		</link>
+		<link>
 			<name>lib/aws/secure_sockets</name>
 			<type>2</type>
 			<locationURI>BASE_DIR_ROOT/lib/secure_sockets/portable/lwip</locationURI>
@@ -216,6 +236,11 @@
 			<name>lib/aws/shadow</name>
 			<type>2</type>
 			<locationURI>BASE_DIR_ROOT/lib/shadow</locationURI>
+		</link>
+		<link>
+			<name>lib/aws/tls</name>
+			<type>2</type>
+			<locationURI>BASE_DIR_ROOT/lib/tls</locationURI>
 		</link>
 		<link>
 			<name>lib/aws/utils</name>
@@ -227,7 +252,7 @@
 			<type>2</type>
 			<locationURI>BASE_DIR_ROOT/lib/wifi/portable/cypress/CYW954907AEVAL1F</locationURI>
 		</link>
-		<link>
+        <link>
 			<name>lib/third_party/jsmn</name>
 			<type>2</type>
 			<locationURI>BASE_DIR_ROOT/lib/third_party/jsmn</locationURI>

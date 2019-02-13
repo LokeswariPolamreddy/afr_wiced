@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>aws_demo</name>
+	<name>aws_demos</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -133,6 +133,11 @@
 			<locationURI>BASE_DIR_ROOT/lib/bufferpool</locationURI>
 		</link>
 		<link>
+			<name>lib/aws/crypto</name>
+			<type>2</type>
+			<locationURI>BASE_DIR_ROOT/lib/crypto</locationURI>
+		</link>
+		<link>
 			<name>lib/aws/greengrass</name>
 			<type>2</type>
 			<locationURI>BASE_DIR_ROOT/lib/greengrass</locationURI>
@@ -158,6 +163,11 @@
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
+			<name>lib/aws/pkcs11/aws_pkcs11_mbedtls.c</name>
+			<type>1</type>
+			<locationURI>BASE_DIR_ROOT/lib/pkcs11/mbedtls/aws_pkcs11_mbedtls.c</locationURI>
+		</link>
+		<link>
 			<name>lib/aws/secure_sockets</name>
 			<type>2</type>
 			<locationURI>BASE_DIR_ROOT/lib/secure_sockets/portable/lwip</locationURI>
@@ -166,6 +176,11 @@
 			<name>lib/aws/shadow</name>
 			<type>2</type>
 			<locationURI>BASE_DIR_ROOT/lib/shadow</locationURI>
+		</link>
+		<link>
+			<name>lib/aws/tls</name>
+			<type>2</type>
+			<locationURI>BASE_DIR_ROOT/lib/tls</locationURI>
 		</link>
 		<link>
 			<name>lib/aws/utils</name>

@@ -63,25 +63,6 @@ enum eObjectHandles
     eAwsCodeSigningKey
 };
 
-int wiced_crypto_random_ecc ( unsigned char *output, size_t len )
-{
-    size_t use_len;
-    int rnd;
-
-    while( len > 0 )
-    {
-        use_len = len;
-        if( use_len > sizeof(int) )
-            use_len = sizeof(int);
-
-        rnd = rand();
-        memcpy( output, &rnd, use_len );
-        output += use_len;
-        len -= use_len;
-    }
-    return 0;
-}
-
 /* Converts a label to its respective filename and handle. */
 void prvLabelToFilenameHandle( uint8_t * pcLabel,
                                char ** pcFileName,
@@ -348,13 +329,3 @@ void PKCS11_PAL_GetObjectValueCleanup( uint8_t * pucData,
 }
 
 /*-----------------------------------------------------------*/
-
-int mbedtls_hardware_poll( void * data,
-                           unsigned char * output,
-                           size_t len,
-                           size_t * olen )
-{
-    wiced_crypto_random_ecc( output, len);
-    *olen = len;
-    return 0;
-}

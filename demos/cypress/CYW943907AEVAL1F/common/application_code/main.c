@@ -23,6 +23,9 @@
  * http://www.FreeRTOS.org
  */
 
+/* Library includes */
+#include <stdlib.h>
+
 /* FreeRTOS includes. */
 #include "FreeRTOS.h"
 #include "task.h"
@@ -37,6 +40,7 @@
 #include "aws_clientcredential.h"
 #include "aws_application_version.h"
 #include "aws_dev_mode_key_provisioning.h"
+#include "aws_secure_sockets.h"
 #include "wiced_rtos.h"
 
 /* Declare the firmware version structure for all to see. */
@@ -59,6 +63,19 @@ const AppVersion32_t xAppFirmwareVersion = {
 
 /* The name of the devices for xApplicationDNSQueryHook. */
 #define mainDEVICE_NICK_NAME				"cypress_demo" /* FIX ME.*/
+
+/* DNS addresses used seed in PRNG seed generation
+ * 7 total addresses to for 7 DNS queries
+ * TODO Define these addresses as macros (configXYZ) */
+static const char *pcDnsNames[] = {
+        "www.amazon.com",
+        "aws.amazon.com",
+        "www.imdb.com",
+        "www.zappos.com",
+        "www.amazon.co.uk",
+        "www.amazon.co.in",
+        "www.a9.com"
+};
 
 #if 0
 /* Static arrays for FreeRTOS-Plus-TCP stack initialization for Ethernet network
@@ -137,11 +154,23 @@ void vApplicationIPNetworkEventHook( eIPCallbackEvent_t eNetworkEvent );
 static void prvWifiConnect( void );
 
 /**
+ * @brief Generate Random Seed.
+ * The random number seed generation solution presented in this function is
+ * for demonstration purposes only. It is not recommended to go into production with
+ * the logic presented here. The current solution takes entropy from the network latency.
+ * For production development, it is recommended to use a source which will be
+ * truly random in nature.
+ *
+ */
+static void prvGenerateRandomSeed( void );
+
+/**
  * @brief Initializes the board.
  */
 static void prvMiscInitialization( void );
 
-
+uint32_t ulSeedValid = 0;
+uint32_t ulSeed = 0;
 static TaskHandle_t  system_monitor_thread_handle;
 void system_monitor_thread_main( wiced_thread_arg_t arg );
 /*-----------------------------------------------------------*/
@@ -205,6 +234,9 @@ void vApplicationDaemonTaskStartupHook( void )
         {
             /* Connect to the Wi-Fi before running the tests. */
             prvWifiConnect();
+
+            /* Generate seed for PRNG */
+            prvGenerateRandomSeed();
 
             /* Provision the device with AWS certificate and private key. */
             vDevModeKeyProvisioning();
@@ -303,7 +335,23 @@ void prvWifiConnect( void )
     #endif /* if 0 */
 }
 /*-----------------------------------------------------------*/
-
+static void prvGenerateRandomSeed()
+{
+    uint8_t ucAdddressCount = sizeof( pcDnsNames  )/sizeof( char* );
+    TickType_t xTickCount = platform_tick_get_time(PLATFORM_TICK_GET_SLOW_TIME_STAMP);
+    /* Populate first 4 bits based on the current clock after wifi init */
+    ulSeed |= xTickCount & 0x0F;
+    /* Populate remaining bits after 7 DNS queries */
+    for( uint8_t ucCount = 0; ucCount < ucAdddressCount ; ucCount++ )
+    {
+        SOCKETS_GetHostByName( pcDnsNames[ucCount] );
+        xTickCount = platform_tick_get_time(PLATFORM_TICK_GET_SLOW_TIME_STAMP);
+        ulSeed <<= 4UL;
+        ulSeed |= xTickCount & 0x0F;
+    }
+    ulSeedValid = 1;
+}
+/*-----------------------------------------------------------*/
 /**
  * @brief This is to provide memory that is used by the Idle task.
  *

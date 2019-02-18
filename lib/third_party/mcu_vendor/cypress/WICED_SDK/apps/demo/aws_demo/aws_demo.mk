@@ -34,6 +34,8 @@
 NAME := aws_demo
 GLOBAL_DEFINES := WICED_AMAZON_FREERTOS_SDK
 
+GLOBAL_DEFINES += WLAN_FIRMWARE_PRNG_SEED
+
 export AMAZON_FREERTOS_PATH := ../../../../../../../../
 export AMAZON_FREERTOS_LIB_PATH := ../../../../../../../
 export AFR_THIRDPARTY_PATH := ../../../../../../

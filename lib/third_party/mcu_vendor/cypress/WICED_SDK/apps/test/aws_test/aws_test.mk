@@ -40,6 +40,9 @@ GLOBAL_DEFINES += AMAZON_FREERTOS_ENABLE_UNIT_TESTS \
                   UNITY_EXCLUDE_MATH_H \
                   UNITY_INCLUDE_CONFIG_H
 endif
+
+GLOBAL_DEFINES += WLAN_FIRMWARE_PRNG_SEED
+
 export AMAZON_FREERTOS_PATH := ../../../../../../../../
 export AMAZON_FREERTOS_LIB_PATH := ../../../../../../../
 export AFR_THIRDPARTY_PATH := ../../../../../../

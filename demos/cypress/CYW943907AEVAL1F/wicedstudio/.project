@@ -85,7 +85,52 @@
 		<link>
 			<name>config_files</name>
 			<type>2</type>
-			<locationURI>BASE_DIR_ROOT/demos/cypress/CYW943907AEVAL1F/common/config_files</locationURI>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>config_files/aws_bufferpool_config.h</name>
+			<type>1</type>
+			<locationURI>BASE_DIR_ROOT/demos/cypress/CYW943907AEVAL1F/common/config_files/aws_bufferpool_config.h</locationURI>
+		</link>
+		<link>
+			<name>config_files/aws_demo_config.h</name>
+			<type>1</type>
+			<locationURI>BASE_DIR_ROOT/demos/cypress/CYW943907AEVAL1F/common/config_files/aws_demo_config.h</locationURI>
+		</link>
+		<link>
+			<name>config_files/aws_ggd_config.h</name>
+			<type>1</type>
+			<locationURI>BASE_DIR_ROOT/demos/cypress/CYW943907AEVAL1F/common/config_files/aws_ggd_config.h</locationURI>
+		</link>
+		<link>
+			<name>config_files/aws_mqtt_agent_config.h</name>
+			<type>1</type>
+			<locationURI>BASE_DIR_ROOT/demos/cypress/CYW943907AEVAL1F/common/config_files/aws_mqtt_agent_config.h</locationURI>
+		</link>
+		<link>
+			<name>config_files/aws_mqtt_config.h</name>
+			<type>1</type>
+			<locationURI>BASE_DIR_ROOT/demos/cypress/CYW943907AEVAL1F/common/config_files/aws_mqtt_config.h</locationURI>
+		</link>
+		<link>
+			<name>config_files/aws_pkcs11_config.h</name>
+			<type>1</type>
+			<locationURI>BASE_DIR_ROOT/demos/cypress/CYW943907AEVAL1F/common/config_files/aws_pkcs11_config.h</locationURI>
+		</link>
+		<link>
+			<name>config_files/aws_secure_sockets_config.h</name>
+			<type>1</type>
+			<locationURI>BASE_DIR_ROOT/demos/cypress/CYW943907AEVAL1F/common/config_files/aws_secure_sockets_config.h</locationURI>
+		</link>
+		<link>
+			<name>config_files/FreeRTOSConfig.h</name>
+			<type>1</type>
+			<locationURI>BASE_DIR_ROOT/demos/cypress/CYW943907AEVAL1F/common/config_files/FreeRTOSConfig.h</locationURI>
+		</link>
+		<link>
+			<name>config_files/lwipopts.h</name>
+			<type>1</type>
+			<locationURI>BASE_DIR_ROOT/demos/cypress/CYW943907AEVAL1F/common/config_files/lwipopts.h</locationURI>
 		</link>
 		<link>
 			<name>lib</name>
@@ -110,7 +155,57 @@
 		<link>
 			<name>application_code/common_demos/include</name>
 			<type>2</type>
-			<locationURI>BASE_DIR_ROOT/demos/common/include</locationURI>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>application_code/common_demos/include/aws_application_version.h</name>
+			<type>1</type>
+			<locationURI>BASE_DIR_ROOT/demos/common/include/aws_application_version.h</locationURI>
+		</link>
+		<link>
+			<name>application_code/common_demos/include/aws_clientcredential.h</name>
+			<type>1</type>
+			<locationURI>BASE_DIR_ROOT/demos/common/include/aws_clientcredential.h</locationURI>
+		</link>
+		<link>
+			<name>application_code/common_demos/include/aws_clientcredential_keys.h</name>
+			<type>1</type>
+			<locationURI>BASE_DIR_ROOT/demos/common/include/aws_clientcredential_keys.h</locationURI>
+		</link>
+		<link>
+			<name>application_code/common_demos/include/aws_demo.h</name>
+			<type>1</type>
+			<locationURI>BASE_DIR_ROOT/demos/common/include/aws_demo.h</locationURI>
+		</link>
+		<link>
+			<name>application_code/common_demos/include/aws_demo_runner.h</name>
+			<type>1</type>
+			<locationURI>BASE_DIR_ROOT/demos/common/include/aws_demo_runner.h</locationURI>
+		</link>
+		<link>
+			<name>application_code/common_demos/include/aws_dev_mode_key_provisioning.h</name>
+			<type>1</type>
+			<locationURI>BASE_DIR_ROOT/demos/common/include/aws_dev_mode_key_provisioning.h</locationURI>
+		</link>
+		<link>
+			<name>application_code/common_demos/include/aws_greengrass_discovery_demo.h</name>
+			<type>1</type>
+			<locationURI>BASE_DIR_ROOT/demos/common/include/aws_greengrass_discovery_demo.h</locationURI>
+		</link>
+		<link>
+			<name>application_code/common_demos/include/aws_hello_world.h</name>
+			<type>1</type>
+			<locationURI>BASE_DIR_ROOT/demos/common/include/aws_hello_world.h</locationURI>
+		</link>
+		<link>
+			<name>application_code/common_demos/include/aws_logging_task.h</name>
+			<type>1</type>
+			<locationURI>BASE_DIR_ROOT/demos/common/include/aws_logging_task.h</locationURI>
+		</link>
+		<link>
+			<name>application_code/common_demos/include/aws_shadow_lightbulb_on_off.h</name>
+			<type>1</type>
+			<locationURI>BASE_DIR_ROOT/demos/common/include/aws_shadow_lightbulb_on_off.h</locationURI>
 		</link>
 		<link>
 			<name>application_code/common_demos/source</name>
@@ -121,11 +216,6 @@
 			<name>lib/aws/FreeRTOS</name>
 			<type>2</type>
 			<locationURI>BASE_DIR_ROOT/lib/FreeRTOS</locationURI>
-		</link>
-		<link>
-			<name>lib/aws/FreeRTOS-Plus-POSIX</name>
-			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
 			<name>lib/aws/bufferpool</name>
@@ -151,11 +241,6 @@
 			<name>lib/aws/mqtt</name>
 			<type>2</type>
 			<locationURI>BASE_DIR_ROOT/lib/mqtt</locationURI>
-		</link>
-		<link>
-			<name>lib/aws/ota</name>
-			<type>2</type>
-			<locationURI>BASE_DIR_ROOT/lib/ota/portable/cypress/CYW943907AEVAL1F</locationURI>
 		</link>
 		<link>
 			<name>lib/aws/pkcs11</name>
@@ -200,7 +285,52 @@
 		<link>
 			<name>lib/third_party/lwip</name>
 			<type>2</type>
-			<locationURI>BASE_DIR_ROOT/lib/third_party/lwip</locationURI>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>lib/third_party/lwip/src</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>lib/third_party/lwip/src/api</name>
+			<type>2</type>
+			<locationURI>BASE_DIR_ROOT/lib/third_party/lwip/src/api</locationURI>
+		</link>
+		<link>
+			<name>lib/third_party/lwip/src/apps</name>
+			<type>2</type>
+			<locationURI>BASE_DIR_ROOT/lib/third_party/lwip/src/apps</locationURI>
+		</link>
+		<link>
+			<name>lib/third_party/lwip/src/core</name>
+			<type>2</type>
+			<locationURI>BASE_DIR_ROOT/lib/third_party/lwip/src/core</locationURI>
+		</link>
+		<link>
+			<name>lib/third_party/lwip/src/include</name>
+			<type>2</type>
+			<locationURI>BASE_DIR_ROOT/lib/third_party/lwip/src/include</locationURI>
+		</link>
+		<link>
+			<name>lib/third_party/lwip/src/netif</name>
+			<type>2</type>
+			<locationURI>BASE_DIR_ROOT/lib/third_party/lwip/src/netif</locationURI>
+		</link>
+		<link>
+			<name>lib/third_party/lwip/src/portable</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>lib/third_party/lwip/src/portable/arch</name>
+			<type>2</type>
+			<locationURI>BASE_DIR_ROOT/lib/third_party/lwip/src/portable/arch</locationURI>
+		</link>
+		<link>
+			<name>lib/third_party/lwip/src/portable/cypress</name>
+			<type>2</type>
+			<locationURI>BASE_DIR_ROOT/lib/third_party/lwip/src/portable/cypress/CYW943907AEVAL1F</locationURI>
 		</link>
 		<link>
 			<name>lib/third_party/mbedtls</name>
@@ -248,49 +378,9 @@
 			<locationURI>BASE_DIR_ROOT/demos/common/logging/aws_logging_task_dynamic_buffers.c</locationURI>
 		</link>
 		<link>
-			<name>application_code/common_demos/source/aws_ota_update_demo.c</name>
-			<type>1</type>
-			<locationURI>BASE_DIR_ROOT/demos/common/ota/aws_ota_update_demo.c</locationURI>
-		</link>
-		<link>
 			<name>application_code/common_demos/source/aws_shadow_lightbulb_on_off.c</name>
 			<type>1</type>
 			<locationURI>BASE_DIR_ROOT/demos/common/shadow/aws_shadow_lightbulb_on_off.c</locationURI>
-		</link>
-		<link>
-			<name>application_code/common_demos/source/aws_subscribe_publish_loop.c</name>
-			<type>1</type>
-			<locationURI>BASE_DIR_ROOT/demos/common/mqtt/aws_subscribe_publish_loop.c</locationURI>
-		</link>
-		<link>
-			<name>application_code/common_demos/source/aws_tcp_echo_client_separate_tasks.c</name>
-			<type>1</type>
-			<locationURI>BASE_DIR_ROOT/demos/common/tcp/aws_tcp_echo_client_separate_tasks.c</locationURI>
-		</link>
-		<link>
-			<name>application_code/common_demos/source/aws_tcp_echo_client_single_task.c</name>
-			<type>1</type>
-			<locationURI>BASE_DIR_ROOT/demos/common/tcp/aws_tcp_echo_client_single_task.c</locationURI>
-		</link>
-		<link>
-			<name>lib/aws/FreeRTOS-Plus-POSIX/include</name>
-			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
-		</link>
-		<link>
-			<name>lib/aws/FreeRTOS-Plus-POSIX/source</name>
-			<type>2</type>
-			<locationURI>BASE_DIR_ROOT/lib/FreeRTOS-Plus-POSIX/source</locationURI>
-		</link>
-		<link>
-			<name>lib/aws/ota/aws_ota_agent.c</name>
-			<type>1</type>
-			<locationURI>BASE_DIR_ROOT/lib/ota/aws_ota_agent.c</locationURI>
-		</link>
-		<link>
-			<name>lib/aws/ota/aws_ota_cbor.c</name>
-			<type>1</type>
-			<locationURI>BASE_DIR_ROOT/lib/ota/aws_ota_cbor.c</locationURI>
 		</link>
 		<link>
 			<name>lib/aws/pkcs11/aws_pkcs11_pal.c</name>
@@ -306,26 +396,6 @@
 			<name>lib/third_party/pkcs11/pkcs11.h</name>
 			<type>1</type>
 			<locationURI>BASE_DIR_ROOT/lib/third_party/pkcs11/pkcs11.h</locationURI>
-		</link>
-		<link>
-			<name>lib/aws/FreeRTOS-Plus-POSIX/include/FreeRTOS_POSIX.h</name>
-			<type>1</type>
-			<locationURI>BASE_DIR_ROOT/lib/FreeRTOS-Plus-POSIX/include/FreeRTOS_POSIX.h</locationURI>
-		</link>
-		<link>
-			<name>lib/aws/FreeRTOS-Plus-POSIX/include/FreeRTOS_POSIX_internal.h</name>
-			<type>1</type>
-			<locationURI>BASE_DIR_ROOT/lib/FreeRTOS-Plus-POSIX/include/FreeRTOS_POSIX_internal.h</locationURI>
-		</link>
-		<link>
-			<name>lib/aws/FreeRTOS-Plus-POSIX/include/FreeRTOS_POSIX_portable.h</name>
-			<type>1</type>
-			<locationURI>BASE_DIR_ROOT/lib/FreeRTOS-Plus-POSIX/include/portable/cypress/CYW943907AEVAL1F/FreeRTOS_POSIX_portable.h</locationURI>
-		</link>
-		<link>
-			<name>lib/aws/FreeRTOS-Plus-POSIX/include/FreeRTOS_POSIX_portable_default.h</name>
-			<type>1</type>
-			<locationURI>BASE_DIR_ROOT/lib/FreeRTOS-Plus-POSIX/include/portable/FreeRTOS_POSIX_portable_default.h</locationURI>
 		</link>
 		<link>
 			<name>lib/third_party/mcu_vendor/cypress/WICED_SDK</name>

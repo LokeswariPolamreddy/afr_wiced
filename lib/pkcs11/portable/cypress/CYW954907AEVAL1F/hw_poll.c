@@ -36,23 +36,63 @@
 
 /* The random number generation solution presented in this file is
  * for demonstration purposes only. It is not recommended to go into production with
- * the logic presented here. The current solution takes entropy from the CPU ticks.
- * For production development, it is recommended to use a source which will be 
+ * the logic presented here. The current solution takes entropy from WLAN Firmware
+ * generated random number and the CPU ticks.
+ * For production development, it is recommended to use a source which will be
  * truly random in nature.
  */
- 
+
 /* C runtime includes. */
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#ifdef WLAN_FIRMWARE_PRNG_SEED
 /* WICED includes */
 #include "wiced_crypto.h"
+#endif
+
+#ifndef WLAN_FIRMWARE_PRNG_SEED
+extern uint32_t ulSeedValid;
+extern uint32_t ulSeed;
+static uint32_t ulPrgnSeedDone = 0;
+#endif
 
 int mbedtls_hardware_poll( void * data,
                            unsigned char * output,
                            size_t len,
                            size_t * olen )
 {
+
+#ifdef WLAN_FIRMWARE_PRNG_SEED
+    /* Enabling WLAN_FIRMWARE_PRNG_SEED in app's make file will
+     * generate random number using WELL512 RNG. The initial seed
+     * is the combination of  random number generated from WLAN firmware
+     * and cpu tick count. WLAN FW generates random number using its high
+     * frequency clock. And on system reboot the FW's clock starts from  zero.
+     * Same random number sequence can be generated only if both WLAN FW's clock count
+     * and CPU tick count matches with the different boots.
+	 */
     wiced_crypto_get_random( output, len);
     *olen = len;
+#else
+    /* random number is generated using rand() function. Initial seed
+     * is network latency.
+     */
+    if( ( ulPrgnSeedDone == 0 ) && ( ulSeedValid != 0 ) )
+    {
+        srand(ulSeed);
+        ulPrgnSeedDone = 1;
+    }
+    *olen = sizeof(int);
+    if ( (*olen) > len )
+    {
+        *olen = len;
+    }
+    int rand_num = rand();
+    unsigned char *pucTemp = ( unsigned char * )&rand_num;
+    memcpy( ( void* ) output, (void*) pucTemp, *olen);
+#endif
     return 0;
 }
 
